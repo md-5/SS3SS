@@ -15,6 +15,6 @@ if [ -f "$FILE_PATH" ]
 then
 	s3cmd sync "$FILE_DIR/" "s3://$BUCKET"
 	UPLOAD_URL="http://$BUCKET/$FILE_NAME"
-	echo "$UPLOAD_URL" | xsel -b -i
+	echo -n "$UPLOAD_URL" | xsel -b -i
 	notify-send Screenshot "$UPLOAD_URL copied to clipboard" -i "$FILE_PATH" -t 1000
 fi
